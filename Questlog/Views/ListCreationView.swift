@@ -68,9 +68,12 @@ struct ListCreationView: View {
                 }
             }
             Button(action: {
-                dbManager.createList(name: listName, 
-                description: listDescription, notes: listNotes, 
-                priority: listPriority)
+                if listName.trimmingCharacters(in: .whitespaces).isEmpty {
+                    listName = "Unnamed List"
+                }
+//                dbManager.createList(name: listName, 
+//                description: listDescription, notes: listNotes, 
+//                priority: listPriority)
                 
                 page = "Lists"
             }) {
@@ -88,5 +91,5 @@ struct ListCreationView: View {
 
 #Preview {
     @Previewable @State var p: String = "CreateList"
-    ListCreationView(page: $p, listFormState: ListFormState(), dbManager: DBManager())
+    ListCreationView(page: $p, dbManager: DBManager(),ListState: ListFormState())
 }

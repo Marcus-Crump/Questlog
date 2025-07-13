@@ -21,6 +21,7 @@ struct ListsView: View {
             Image("Background")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
+            BookmarksView(page:$page)  // NEW: Add bookmarks overlay
                 
                 // Main content overlay
                 VStack {
@@ -63,7 +64,7 @@ struct ListsView: View {
                 }
             .background(Color.clear)
             
-            BookmarksView(page:$page)  // NEW: Add bookmarks overlay
+            
         }
     }
 }

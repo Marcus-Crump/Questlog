@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct ProjectDetailView: View {
+    @Binding var page: String
     var body: some View {
         ZStack {
             Color.yellow
             Text("Project Detail")
+            BookmarksView(page:$page)
         }
     }
 }
 
 #Preview {
-    ProjectDetailView()
+    @Previewable @State var p: String = "ProjectDetail"
+    ProjectDetailView(page:$p)
 }

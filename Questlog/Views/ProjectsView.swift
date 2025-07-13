@@ -13,6 +13,7 @@ struct ProjectsView: View {
         ZStack {
             Color.green
             Text("Projects")
+            BookmarksView(page:$page)
         }
         .toolbar(.hidden, for: .navigationBar)
     }

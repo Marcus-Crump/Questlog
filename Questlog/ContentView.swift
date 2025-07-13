@@ -12,6 +12,7 @@ struct ContentView: View {
     @StateObject private var dbManager: DBManager = DBManager()
     @StateObject private var ToDoState: ToDoFormState = ToDoFormState()
     @StateObject private var ListState: ListFormState = ListFormState()
+    
     var body: some View {
         switch page {
         case "Lists":
