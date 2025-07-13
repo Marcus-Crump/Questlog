@@ -1,5 +1,5 @@
 //
-//  TodoManager.swift
+//  DBManager.swift
 //  Questlog
 //
 //  Created by Mars on 7/12/25.
@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 // ObservableObject allows SwiftUI to watch this class for changes
-class TodoManager: ObservableObject {
+class DBManager: ObservableObject {
     // NSPersistentContainer manages the Core Data stack and database connection
     let container = NSPersistentContainer(name: "ToDoModel")
     // Contains these Core Data pieces:
@@ -18,7 +18,7 @@ class TodoManager: ObservableObject {
     // - Managed Object Context (data workspace)
     // - Persistent Stores (actual database files)
 
-    // Initialize the TodoManager and set up Core Data
+    // Initialize the DBManager and set up Core Data
     init() {
         // Load the persistent stores (database files) from disk
         container.loadPersistentStores { _, error in
@@ -174,4 +174,4 @@ class TodoManager: ObservableObject {
             return []
         }
     }
-}
+} 

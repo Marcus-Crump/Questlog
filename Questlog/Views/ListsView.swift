@@ -11,6 +11,8 @@ import SwiftUI
 struct ListsView: View {
     @Binding var page: String
     @State var newList: Bool = false
+    @ObservedObject var dbManager: DBManager
+    
     var body: some View {
             ZStack {
                 // Background image that fills the entire screen
@@ -40,39 +42,19 @@ struct ListsView: View {
                     }
                     
                 // Spacer() // Pushes content to center
-                    // Navigation links for your lists
+                    // Navigation links for your lists from Core Data
                     VStack(spacing: 10) {
-                    Button(action: {
-                        page = "Todo1"
-                    }) {
-                            Text("List 1")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .foregroundColor(.black)
-                                .frame(maxWidth: .infinity)
-                            .background(Color.clear)
-                        }
-                        
-                    Button(action: {
-                        page = "Todo2"
-                    }) {
-                            Text("List 2")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .foregroundColor(.black)
-                                .frame(maxWidth: .infinity)
-                            .background(Color.clear)
-                        }
-                        
-                    Button(action: {
-                        page = "Todo3"
-                    }) {
-                            Text("List 3")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .foregroundColor(.black)
-                                .frame(maxWidth: .infinity)
-                            .background(Color.clear)
+                        ForEach(dbManager.getAllLists(), id: \.self) { list in
+                            Button(action: {
+                                page = "Todo\(list.name ?? "Unknown")"
+                            }) {
+                                Text(list.name ?? "Unnamed List")
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.black)
+                                    .frame(maxWidth: .infinity)
+                                    .background(Color.clear)
+                            }
                         }
                     }
                     .padding(.horizontal, 40)
@@ -88,5 +70,5 @@ struct ListsView: View {
 
 #Preview {
     @Previewable @State var p: String = "Lists"
-    ListsView(page:$p)
+    ListsView(page:$p, dbManager: DBManager())
 }

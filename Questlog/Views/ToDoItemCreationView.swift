@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ToDoItemCreationView: View {
     @Binding var page: String
+    @ObservedObject var dbManager: DBManager
+    @ObservedObject var ToDoState: ToDoFormState
     @State private var itemName = ""
     @State private var itemDescription = ""
     @State private var itemCompleted = false

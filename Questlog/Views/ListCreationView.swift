@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ListCreationView: View {
     @Binding var page: String
+    @ObservedObject var dbManager: DBManager
+    @ObservedObject var ListState: ListFormState
     @State private var listName = ""
     @State private var listDescription = ""
     @State private var listNotes = ""
     @State private var listPriority = 0
-    @StateObject var todoManager = TodoManager()
 
     var body: some View {
         ZStack {
@@ -67,7 +68,7 @@ struct ListCreationView: View {
                 }
             }
             Button(action: {
-                todoManager.createList(name: listName, 
+                dbManager.createList(name: listName, 
                 description: listDescription, notes: listNotes, 
                 priority: listPriority)
                 
@@ -87,5 +88,5 @@ struct ListCreationView: View {
 
 #Preview {
     @Previewable @State var p: String = "CreateList"
-    ListCreationView(page: $p)
+    ListCreationView(page: $p, listFormState: ListFormState(), dbManager: DBManager())
 }

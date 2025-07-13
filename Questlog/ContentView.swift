@@ -9,17 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var page: String = ""
+    @StateObject private var dbManager: DBManager = DBManager()
+    @StateObject private var ToDoState: ToDoFormState = ToDoFormState()
+    @StateObject private var ListState: ListFormState = ListFormState()
     var body: some View {
         switch page {
         case "Lists":
-            ListsView(page:$page)
+            ListsView(page:$page, dbManager: dbManager)
         case "Projects":
             ProjectsView(page:$page)
         case "CreateList":
-            ListCreationView(page:$page)
+            ListCreationView(page:$page, dbManager: dbManager, ListState: ListState)
         case "ToDo":
-            ToDoItemCreationView(page:$page)
-        default:    
+            ToDoItemCreationView(page:$page, dbManager: dbManager, ToDoState: ToDoState)
+        default:
             TOCView(page:$page)
         }
     }
