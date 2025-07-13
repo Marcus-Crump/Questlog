@@ -10,9 +10,12 @@ import SwiftUI
 
 struct ListsView: View {
     @Binding var page: String
+    @State var newList: Bool = false
     var body: some View {
             ZStack {
                 // Background image that fills the entire screen
+            Color.black
+                    .ignoresSafeArea()
             Image("Background")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -20,12 +23,21 @@ struct ListsView: View {
                 // Main content overlay
                 VStack {
                
-                    
-                    Text("Lists View")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .foregroundColor(.black)
-                        .padding()
+                    HStack{
+                        Text("Lists View")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                            .padding()
+                        Button(action: {
+                            page = "CreateList"
+                        }) {
+                            Image("WriteNewThing")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 40, height: 40) // Set specific size for the button
+                        }
+                    }
                     
                 // Spacer() // Pushes content to center
                     // Navigation links for your lists

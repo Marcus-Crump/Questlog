@@ -12,6 +12,8 @@ struct TOCView: View {
 
     var body: some View {
         ZStack {
+            Color.black
+                .ignoresSafeArea()
             Image("Background")
                 .resizable()
                 .aspectRatio(contentMode: .fill)

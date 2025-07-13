@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var page: String = "TOC"
-
+    @State private var page: String = ""
     var body: some View {
         switch page {
-        case "TOC":
-            TOCView(page:$page)
         case "Lists":
             ListsView(page:$page)
-        case "ToDo":
-            ToDoView(page:$page,name: "list 1")
         case "Projects":
             ProjectsView(page:$page)
+        case "CreateList":
+            ListCreationView(page:$page)
+        case "ToDo":
+            ToDoItemCreationView(page:$page)
         default:    
             TOCView(page:$page)
         }
