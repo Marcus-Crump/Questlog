@@ -27,6 +27,5 @@ struct ToDoView: View {
 }
 
 #Preview {
-    @Previewable @State var p: String = "ToDo"
-    ToDoView(page:$p,name:"ToDo")
+    ToDoView(page: .constant("ToDo"), name: "ToDo")
 }

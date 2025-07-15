@@ -3,66 +3,58 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 56;
 	objects = {
 
-/* Begin PBXContainerItemProxy section */
-		41CC70F32E209CB300CD6884 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 41CC70DA2E209CB100CD6884 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 41CC70E12E209CB100CD6884;
-			remoteInfo = Questlog;
-		};
-		41CC70FD2E209CB300CD6884 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 41CC70DA2E209CB100CD6884 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 41CC70E12E209CB100CD6884;
-			remoteInfo = Questlog;
-		};
-/* End PBXContainerItemProxy section */
+/* Begin PBXBuildFile section */
+		469188322E25E37D008BD3F7 /* QuestlogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469188312E25E37D008BD3F7 /* QuestlogApp.swift */; };
+		469188362E25E381008BD3F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469188352E25E381008BD3F7 /* Assets.xcassets */; };
+		469188392E25E381008BD3F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469188382E25E381008BD3F7 /* Preview Assets.xcassets */; };
+		4691883E2E25E381008BD3F7 /* DBModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4691883C2E25E381008BD3F7 /* DBModel.xcdatamodeld */; };
+		469188522E25ED53008BD3F7 /* ListFormState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691884C2E25ED53008BD3F7 /* ListFormState.swift */; };
+		469188532E25ED53008BD3F7 /* ToDoFormState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691884D2E25ED53008BD3F7 /* ToDoFormState.swift */; };
+		469188542E25ED53008BD3F7 /* ToDoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691884F2E25ED53008BD3F7 /* ToDoList.swift */; };
+		469188642E25EF1D008BD3F7 /* ListCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469188552E25EF1D008BD3F7 /* ListCreationView.swift */; };
+		469188652E25EF1D008BD3F7 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469188562E25EF1D008BD3F7 /* ListsView.swift */; };
+		469188662E25EF1D008BD3F7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469188572E25EF1D008BD3F7 /* LoadingView.swift */; };
+		469188672E25EF1D008BD3F7 /* ProjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469188582E25EF1D008BD3F7 /* ProjectDetailView.swift */; };
+		469188682E25EF1D008BD3F7 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469188592E25EF1D008BD3F7 /* ProjectsView.swift */; };
+		469188692E25EF1D008BD3F7 /* TOCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691885A2E25EF1D008BD3F7 /* TOCView.swift */; };
+		4691886A2E25EF1D008BD3F7 /* ToDoItemCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691885B2E25EF1D008BD3F7 /* ToDoItemCreationView.swift */; };
+		4691886B2E25EF1D008BD3F7 /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691885C2E25EF1D008BD3F7 /* ToDoView.swift */; };
+		4691886C2E25EF1D008BD3F7 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691885E2E25EF1D008BD3F7 /* BackButton.swift */; };
+		4691886D2E25EF1D008BD3F7 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691885F2E25EF1D008BD3F7 /* BookmarksView.swift */; };
+		4691886E2E25EF1D008BD3F7 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469188602E25EF1D008BD3F7 /* DBManager.swift */; };
+		4691886F2E25EF1D008BD3F7 /* ToDoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 469188612E25EF1D008BD3F7 /* ToDoModel.xcdatamodeld */; };
+		469188712E25F085008BD3F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469188702E25F085008BD3F7 /* ContentView.swift */; };
+/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		41CC70E22E209CB100CD6884 /* Questlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Questlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		41CC70F22E209CB300CD6884 /* QuestlogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuestlogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		41CC70FC2E209CB300CD6884 /* QuestlogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuestlogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4691882E2E25E37D008BD3F7 /* Questlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Questlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		469188312E25E37D008BD3F7 /* QuestlogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestlogApp.swift; sourceTree = "<group>"; };
+		469188352E25E381008BD3F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		469188382E25E381008BD3F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4691883D2E25E381008BD3F7 /* Questlog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Questlog.xcdatamodel; sourceTree = "<group>"; };
+		4691884C2E25ED53008BD3F7 /* ListFormState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFormState.swift; sourceTree = "<group>"; };
+		4691884D2E25ED53008BD3F7 /* ToDoFormState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoFormState.swift; sourceTree = "<group>"; };
+		4691884F2E25ED53008BD3F7 /* ToDoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; };
+		469188552E25EF1D008BD3F7 /* ListCreationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCreationView.swift; sourceTree = "<group>"; };
+		469188562E25EF1D008BD3F7 /* ListsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListsView.swift; sourceTree = "<group>"; };
+		469188572E25EF1D008BD3F7 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		469188582E25EF1D008BD3F7 /* ProjectDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDetailView.swift; sourceTree = "<group>"; };
+		469188592E25EF1D008BD3F7 /* ProjectsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
+		4691885A2E25EF1D008BD3F7 /* TOCView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOCView.swift; sourceTree = "<group>"; };
+		4691885B2E25EF1D008BD3F7 /* ToDoItemCreationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemCreationView.swift; sourceTree = "<group>"; };
+		4691885C2E25EF1D008BD3F7 /* ToDoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
+		4691885E2E25EF1D008BD3F7 /* BackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		4691885F2E25EF1D008BD3F7 /* BookmarksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
+		469188602E25EF1D008BD3F7 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		469188632E25EF1D008BD3F7 /* ToDoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoModel.xcdatamodel; sourceTree = "<group>"; };
+		469188702E25F085008BD3F7 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Questlog/ContentView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		41CC70E42E209CB100CD6884 /* Questlog */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Questlog;
-			sourceTree = "<group>";
-		};
-		41CC70F52E209CB300CD6884 /* QuestlogTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = QuestlogTests;
-			sourceTree = "<group>";
-		};
-		41CC70FF2E209CB300CD6884 /* QuestlogUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = QuestlogUITests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
-
 /* Begin PBXFrameworksBuildPhase section */
-		41CC70DF2E209CB100CD6884 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41CC70EF2E209CB300CD6884 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41CC70F92E209CB300CD6884 /* Frameworks */ = {
+		4691882B2E25E37D008BD3F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -72,204 +64,192 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		41CC70D92E209CB100CD6884 = {
+		469188252E25E37D008BD3F7 = {
 			isa = PBXGroup;
 			children = (
-				41CC70E42E209CB100CD6884 /* Questlog */,
-				41CC70F52E209CB300CD6884 /* QuestlogTests */,
-				41CC70FF2E209CB300CD6884 /* QuestlogUITests */,
-				41CC70E32E209CB100CD6884 /* Products */,
+				469188302E25E37D008BD3F7 /* Questlog */,
+				4691882F2E25E37D008BD3F7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		41CC70E32E209CB100CD6884 /* Products */ = {
+		4691882F2E25E37D008BD3F7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				41CC70E22E209CB100CD6884 /* Questlog.app */,
-				41CC70F22E209CB300CD6884 /* QuestlogTests.xctest */,
-				41CC70FC2E209CB300CD6884 /* QuestlogUITests.xctest */,
+				4691882E2E25E37D008BD3F7 /* Questlog.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		469188302E25E37D008BD3F7 /* Questlog */ = {
+			isa = PBXGroup;
+			children = (
+				469188702E25F085008BD3F7 /* ContentView.swift */,
+				469188512E25ED53008BD3F7 /* Models */,
+				469188622E25EF1D008BD3F7 /* Utility */,
+				4691885D2E25EF1D008BD3F7 /* Views */,
+				469188312E25E37D008BD3F7 /* QuestlogApp.swift */,
+				469188352E25E381008BD3F7 /* Assets.xcassets */,
+				4691883C2E25E381008BD3F7 /* DBModel.xcdatamodeld */,
+				469188372E25E381008BD3F7 /* Preview Content */,
+			);
+			path = Questlog;
+			sourceTree = "<group>";
+		};
+		469188372E25E381008BD3F7 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				469188382E25E381008BD3F7 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4691884E2E25ED53008BD3F7 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				4691884C2E25ED53008BD3F7 /* ListFormState.swift */,
+				4691884D2E25ED53008BD3F7 /* ToDoFormState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		469188502E25ED53008BD3F7 /* ToDoLists */ = {
+			isa = PBXGroup;
+			children = (
+				4691884F2E25ED53008BD3F7 /* ToDoList.swift */,
+			);
+			path = ToDoLists;
+			sourceTree = "<group>";
+		};
+		469188512E25ED53008BD3F7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4691884E2E25ED53008BD3F7 /* States */,
+				469188502E25ED53008BD3F7 /* ToDoLists */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4691885D2E25EF1D008BD3F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				469188552E25EF1D008BD3F7 /* ListCreationView.swift */,
+				469188562E25EF1D008BD3F7 /* ListsView.swift */,
+				469188572E25EF1D008BD3F7 /* LoadingView.swift */,
+				469188582E25EF1D008BD3F7 /* ProjectDetailView.swift */,
+				469188592E25EF1D008BD3F7 /* ProjectsView.swift */,
+				4691885A2E25EF1D008BD3F7 /* TOCView.swift */,
+				4691885B2E25EF1D008BD3F7 /* ToDoItemCreationView.swift */,
+				4691885C2E25EF1D008BD3F7 /* ToDoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		469188622E25EF1D008BD3F7 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				4691885E2E25EF1D008BD3F7 /* BackButton.swift */,
+				4691885F2E25EF1D008BD3F7 /* BookmarksView.swift */,
+				469188602E25EF1D008BD3F7 /* DBManager.swift */,
+				469188612E25EF1D008BD3F7 /* ToDoModel.xcdatamodeld */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		41CC70E12E209CB100CD6884 /* Questlog */ = {
+		4691882D2E25E37D008BD3F7 /* Questlog */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 41CC71062E209CB300CD6884 /* Build configuration list for PBXNativeTarget "Questlog" */;
+			buildConfigurationList = 469188412E25E381008BD3F7 /* Build configuration list for PBXNativeTarget "Questlog" */;
 			buildPhases = (
-				41CC70DE2E209CB100CD6884 /* Sources */,
-				41CC70DF2E209CB100CD6884 /* Frameworks */,
-				41CC70E02E209CB100CD6884 /* Resources */,
+				4691882A2E25E37D008BD3F7 /* Sources */,
+				4691882B2E25E37D008BD3F7 /* Frameworks */,
+				4691882C2E25E37D008BD3F7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				41CC70E42E209CB100CD6884 /* Questlog */,
 			);
 			name = Questlog;
-			packageProductDependencies = (
-			);
 			productName = Questlog;
-			productReference = 41CC70E22E209CB100CD6884 /* Questlog.app */;
+			productReference = 4691882E2E25E37D008BD3F7 /* Questlog.app */;
 			productType = "com.apple.product-type.application";
-		};
-		41CC70F12E209CB300CD6884 /* QuestlogTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 41CC71092E209CB300CD6884 /* Build configuration list for PBXNativeTarget "QuestlogTests" */;
-			buildPhases = (
-				41CC70EE2E209CB300CD6884 /* Sources */,
-				41CC70EF2E209CB300CD6884 /* Frameworks */,
-				41CC70F02E209CB300CD6884 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				41CC70F42E209CB300CD6884 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				41CC70F52E209CB300CD6884 /* QuestlogTests */,
-			);
-			name = QuestlogTests;
-			packageProductDependencies = (
-			);
-			productName = QuestlogTests;
-			productReference = 41CC70F22E209CB300CD6884 /* QuestlogTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		41CC70FB2E209CB300CD6884 /* QuestlogUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 41CC710C2E209CB300CD6884 /* Build configuration list for PBXNativeTarget "QuestlogUITests" */;
-			buildPhases = (
-				41CC70F82E209CB300CD6884 /* Sources */,
-				41CC70F92E209CB300CD6884 /* Frameworks */,
-				41CC70FA2E209CB300CD6884 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				41CC70FE2E209CB300CD6884 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				41CC70FF2E209CB300CD6884 /* QuestlogUITests */,
-			);
-			name = QuestlogUITests;
-			packageProductDependencies = (
-			);
-			productName = QuestlogUITests;
-			productReference = 41CC70FC2E209CB300CD6884 /* QuestlogUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		41CC70DA2E209CB100CD6884 /* Project object */ = {
+		469188262E25E37D008BD3F7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1600;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
-					41CC70E12E209CB100CD6884 = {
-						CreatedOnToolsVersion = 16.0;
-					};
-					41CC70F12E209CB300CD6884 = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = 41CC70E12E209CB100CD6884;
-					};
-					41CC70FB2E209CB300CD6884 = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = 41CC70E12E209CB100CD6884;
+					4691882D2E25E37D008BD3F7 = {
+						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
-			buildConfigurationList = 41CC70DD2E209CB100CD6884 /* Build configuration list for PBXProject "Questlog" */;
+			buildConfigurationList = 469188292E25E37D008BD3F7 /* Build configuration list for PBXProject "Questlog" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 41CC70D92E209CB100CD6884;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
-			productRefGroup = 41CC70E32E209CB100CD6884 /* Products */;
+			mainGroup = 469188252E25E37D008BD3F7;
+			productRefGroup = 4691882F2E25E37D008BD3F7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				41CC70E12E209CB100CD6884 /* Questlog */,
-				41CC70F12E209CB300CD6884 /* QuestlogTests */,
-				41CC70FB2E209CB300CD6884 /* QuestlogUITests */,
+				4691882D2E25E37D008BD3F7 /* Questlog */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		41CC70E02E209CB100CD6884 /* Resources */ = {
+		4691882C2E25E37D008BD3F7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41CC70F02E209CB300CD6884 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41CC70FA2E209CB300CD6884 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				469188392E25E381008BD3F7 /* Preview Assets.xcassets in Resources */,
+				469188362E25E381008BD3F7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		41CC70DE2E209CB100CD6884 /* Sources */ = {
+		4691882A2E25E37D008BD3F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41CC70EE2E209CB300CD6884 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41CC70F82E209CB300CD6884 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				4691883E2E25E381008BD3F7 /* DBModel.xcdatamodeld in Sources */,
+				469188692E25EF1D008BD3F7 /* TOCView.swift in Sources */,
+				4691886D2E25EF1D008BD3F7 /* BookmarksView.swift in Sources */,
+				469188542E25ED53008BD3F7 /* ToDoList.swift in Sources */,
+				469188642E25EF1D008BD3F7 /* ListCreationView.swift in Sources */,
+				4691886B2E25EF1D008BD3F7 /* ToDoView.swift in Sources */,
+				469188532E25ED53008BD3F7 /* ToDoFormState.swift in Sources */,
+				469188652E25EF1D008BD3F7 /* ListsView.swift in Sources */,
+				4691886A2E25EF1D008BD3F7 /* ToDoItemCreationView.swift in Sources */,
+				469188322E25E37D008BD3F7 /* QuestlogApp.swift in Sources */,
+				4691886E2E25EF1D008BD3F7 /* DBManager.swift in Sources */,
+				469188672E25EF1D008BD3F7 /* ProjectDetailView.swift in Sources */,
+				469188522E25ED53008BD3F7 /* ListFormState.swift in Sources */,
+				469188682E25EF1D008BD3F7 /* ProjectsView.swift in Sources */,
+				469188712E25F085008BD3F7 /* ContentView.swift in Sources */,
+				469188662E25EF1D008BD3F7 /* LoadingView.swift in Sources */,
+				4691886C2E25EF1D008BD3F7 /* BackButton.swift in Sources */,
+				4691886F2E25EF1D008BD3F7 /* ToDoModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		41CC70F42E209CB300CD6884 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 41CC70E12E209CB100CD6884 /* Questlog */;
-			targetProxy = 41CC70F32E209CB300CD6884 /* PBXContainerItemProxy */;
-		};
-		41CC70FE2E209CB300CD6884 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 41CC70E12E209CB100CD6884 /* Questlog */;
-			targetProxy = 41CC70FD2E209CB300CD6884 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		41CC71042E209CB300CD6884 /* Debug */ = {
+		4691883F2E25E381008BD3F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -321,7 +301,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -332,7 +312,7 @@
 			};
 			name = Debug;
 		};
-		41CC71052E209CB300CD6884 /* Release */ = {
+		469188402E25E381008BD3F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -378,7 +358,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -388,7 +368,7 @@
 			};
 			name = Release;
 		};
-		41CC71072E209CB300CD6884 /* Debug */ = {
+		469188422E25E381008BD3F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -416,7 +396,7 @@
 			};
 			name = Debug;
 		};
-		41CC71082E209CB300CD6884 /* Release */ = {
+		469188432E25E381008BD3F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -441,117 +421,55 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		41CC710A2E209CB300CD6884 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = MARS.QuestlogTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Questlog.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Questlog";
-			};
-			name = Debug;
-		};
-		41CC710B2E209CB300CD6884 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = MARS.QuestlogTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Questlog.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Questlog";
-			};
-			name = Release;
-		};
-		41CC710D2E209CB300CD6884 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = MARS.QuestlogUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Questlog;
-			};
-			name = Debug;
-		};
-		41CC710E2E209CB300CD6884 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = MARS.QuestlogUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Questlog;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		41CC70DD2E209CB100CD6884 /* Build configuration list for PBXProject "Questlog" */ = {
+		469188292E25E37D008BD3F7 /* Build configuration list for PBXProject "Questlog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				41CC71042E209CB300CD6884 /* Debug */,
-				41CC71052E209CB300CD6884 /* Release */,
+				4691883F2E25E381008BD3F7 /* Debug */,
+				469188402E25E381008BD3F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		41CC71062E209CB300CD6884 /* Build configuration list for PBXNativeTarget "Questlog" */ = {
+		469188412E25E381008BD3F7 /* Build configuration list for PBXNativeTarget "Questlog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				41CC71072E209CB300CD6884 /* Debug */,
-				41CC71082E209CB300CD6884 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		41CC71092E209CB300CD6884 /* Build configuration list for PBXNativeTarget "QuestlogTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				41CC710A2E209CB300CD6884 /* Debug */,
-				41CC710B2E209CB300CD6884 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		41CC710C2E209CB300CD6884 /* Build configuration list for PBXNativeTarget "QuestlogUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				41CC710D2E209CB300CD6884 /* Debug */,
-				41CC710E2E209CB300CD6884 /* Release */,
+				469188422E25E381008BD3F7 /* Debug */,
+				469188432E25E381008BD3F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4691883C2E25E381008BD3F7 /* DBModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4691883D2E25E381008BD3F7 /* Questlog.xcdatamodel */,
+			);
+			currentVersion = 4691883D2E25E381008BD3F7 /* Questlog.xcdatamodel */;
+			path = DBModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		469188612E25EF1D008BD3F7 /* ToDoModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				469188632E25EF1D008BD3F7 /* ToDoModel.xcdatamodel */,
+			);
+			currentVersion = 469188632E25EF1D008BD3F7 /* ToDoModel.xcdatamodel */;
+			name = ToDoModel.xcdatamodeld;
+			path = /Users/kat/Projects/Questlog/Questlog/Utility/ToDoModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
-	rootObject = 41CC70DA2E209CB100CD6884 /* Project object */;
+	rootObject = 469188262E25E37D008BD3F7 /* Project object */;
 }

@@ -60,6 +60,5 @@ struct TOCView: View {
 }
 
 #Preview {
-    @Previewable @State var p: String = "TOC"
-    TOCView(page: $p)
+    return TOCView(page: .constant("TOC"))
 }

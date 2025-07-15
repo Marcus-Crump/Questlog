@@ -19,6 +19,5 @@ struct ProjectDetailView: View {
 }
 
 #Preview {
-    @Previewable @State var p: String = "ProjectDetail"
-    ProjectDetailView(page:$p)
+    return ProjectDetailView(page: .constant("ProjectDetail"))
 }

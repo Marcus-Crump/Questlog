@@ -90,6 +90,5 @@ struct ListCreationView: View {
 
 
 #Preview {
-    @Previewable @State var p: String = "CreateList"
-    ListCreationView(page: $p, dbManager: DBManager(),ListState: ListFormState())
+    return ListCreationView(page: .constant("CreateList"), dbManager: DBManager(), ListState: ListFormState())
 }

@@ -39,3 +39,7 @@ func GetCreationDate() -> String {
     format.dateStyle = .long
     return format.string(from: Date())
 }
+
+#Preview {
+    return ToDoItemCreationView(page: .constant("ToDoItemCreation"), dbManager: DBManager(), ToDoState: ToDoFormState())
+}

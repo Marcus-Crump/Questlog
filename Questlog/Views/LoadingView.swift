@@ -12,7 +12,7 @@ struct LoadingView: View {
         ZStack {
             Color.black
                 .ignoresSafeArea()
-            Image("LoadingScreen")
+            Image("Loading")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)  // Use all available space
@@ -39,6 +39,6 @@ struct LoadingView: View {
 }
 
 #Preview {
-    LoadingView()
+    return LoadingView()
 }
 

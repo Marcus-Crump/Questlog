@@ -67,6 +67,5 @@ struct BookmarksView: View {
 }
 
 #Preview {
-    @Previewable @State var p: String = "TOC"
-    BookmarksView(page:$p)
+    BookmarksView(page: .constant("TOC"))
 }

@@ -69,7 +69,6 @@ struct ListsView: View {
     }
 }
 
-#Preview {
-    @Previewable @State var p: String = "Lists"
-    ListsView(page:$p, dbManager: DBManager())
-}
+ #Preview {
+    ListsView(page: .constant("Lists"), dbManager: DBManager())
+ }
