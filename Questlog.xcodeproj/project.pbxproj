@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46710EC82E2842560041B627 /* ListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46710EC72E2842560041B627 /* ListDetailView.swift */; };
 		469188322E25E37D008BD3F7 /* QuestlogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469188312E25E37D008BD3F7 /* QuestlogApp.swift */; };
 		469188362E25E381008BD3F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469188352E25E381008BD3F7 /* Assets.xcassets */; };
 		469188392E25E381008BD3F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469188382E25E381008BD3F7 /* Preview Assets.xcassets */; };
-		4691883E2E25E381008BD3F7 /* DBModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4691883C2E25E381008BD3F7 /* DBModel.xcdatamodeld */; };
 		469188522E25ED53008BD3F7 /* ListFormState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691884C2E25ED53008BD3F7 /* ListFormState.swift */; };
 		469188532E25ED53008BD3F7 /* ToDoFormState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691884D2E25ED53008BD3F7 /* ToDoFormState.swift */; };
 		469188542E25ED53008BD3F7 /* ToDoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691884F2E25ED53008BD3F7 /* ToDoList.swift */; };
@@ -25,16 +25,17 @@
 		4691886C2E25EF1D008BD3F7 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691885E2E25EF1D008BD3F7 /* BackButton.swift */; };
 		4691886D2E25EF1D008BD3F7 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691885F2E25EF1D008BD3F7 /* BookmarksView.swift */; };
 		4691886E2E25EF1D008BD3F7 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469188602E25EF1D008BD3F7 /* DBManager.swift */; };
-		4691886F2E25EF1D008BD3F7 /* ToDoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 469188612E25EF1D008BD3F7 /* ToDoModel.xcdatamodeld */; };
+		4691886F2E25EF1D008BD3F7 /* DBModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 469188612E25EF1D008BD3F7 /* DBModel.xcdatamodeld */; };
 		469188712E25F085008BD3F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469188702E25F085008BD3F7 /* ContentView.swift */; };
+		46E4D2C12E2711090030F164 /* DateEqualities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4D2C02E2711090030F164 /* DateEqualities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		46710EC72E2842560041B627 /* ListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailView.swift; sourceTree = "<group>"; };
 		4691882E2E25E37D008BD3F7 /* Questlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Questlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		469188312E25E37D008BD3F7 /* QuestlogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestlogApp.swift; sourceTree = "<group>"; };
 		469188352E25E381008BD3F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		469188382E25E381008BD3F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4691883D2E25E381008BD3F7 /* Questlog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Questlog.xcdatamodel; sourceTree = "<group>"; };
 		4691884C2E25ED53008BD3F7 /* ListFormState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFormState.swift; sourceTree = "<group>"; };
 		4691884D2E25ED53008BD3F7 /* ToDoFormState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoFormState.swift; sourceTree = "<group>"; };
 		4691884F2E25ED53008BD3F7 /* ToDoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		469188602E25EF1D008BD3F7 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		469188632E25EF1D008BD3F7 /* ToDoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoModel.xcdatamodel; sourceTree = "<group>"; };
 		469188702E25F085008BD3F7 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Questlog/ContentView.swift; sourceTree = SOURCE_ROOT; };
+		46E4D2C02E2711090030F164 /* DateEqualities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateEqualities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +91,6 @@
 				4691885D2E25EF1D008BD3F7 /* Views */,
 				469188312E25E37D008BD3F7 /* QuestlogApp.swift */,
 				469188352E25E381008BD3F7 /* Assets.xcassets */,
-				4691883C2E25E381008BD3F7 /* DBModel.xcdatamodeld */,
 				469188372E25E381008BD3F7 /* Preview Content */,
 			);
 			path = Questlog;
@@ -140,6 +141,7 @@
 				4691885A2E25EF1D008BD3F7 /* TOCView.swift */,
 				4691885B2E25EF1D008BD3F7 /* ToDoItemCreationView.swift */,
 				4691885C2E25EF1D008BD3F7 /* ToDoView.swift */,
+				46710EC72E2842560041B627 /* ListDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,7 +152,8 @@
 				4691885E2E25EF1D008BD3F7 /* BackButton.swift */,
 				4691885F2E25EF1D008BD3F7 /* BookmarksView.swift */,
 				469188602E25EF1D008BD3F7 /* DBManager.swift */,
-				469188612E25EF1D008BD3F7 /* ToDoModel.xcdatamodeld */,
+				469188612E25EF1D008BD3F7 /* DBModel.xcdatamodeld */,
+				46E4D2C02E2711090030F164 /* DateEqualities.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -225,10 +228,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4691883E2E25E381008BD3F7 /* DBModel.xcdatamodeld in Sources */,
 				469188692E25EF1D008BD3F7 /* TOCView.swift in Sources */,
 				4691886D2E25EF1D008BD3F7 /* BookmarksView.swift in Sources */,
 				469188542E25ED53008BD3F7 /* ToDoList.swift in Sources */,
+				46710EC82E2842560041B627 /* ListDetailView.swift in Sources */,
 				469188642E25EF1D008BD3F7 /* ListCreationView.swift in Sources */,
 				4691886B2E25EF1D008BD3F7 /* ToDoView.swift in Sources */,
 				469188532E25ED53008BD3F7 /* ToDoFormState.swift in Sources */,
@@ -241,8 +244,9 @@
 				469188682E25EF1D008BD3F7 /* ProjectsView.swift in Sources */,
 				469188712E25F085008BD3F7 /* ContentView.swift in Sources */,
 				469188662E25EF1D008BD3F7 /* LoadingView.swift in Sources */,
+				46E4D2C12E2711090030F164 /* DateEqualities.swift in Sources */,
 				4691886C2E25EF1D008BD3F7 /* BackButton.swift in Sources */,
-				4691886F2E25EF1D008BD3F7 /* ToDoModel.xcdatamodeld in Sources */,
+				4691886F2E25EF1D008BD3F7 /* DBModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,24 +452,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		4691883C2E25E381008BD3F7 /* DBModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				4691883D2E25E381008BD3F7 /* Questlog.xcdatamodel */,
-			);
-			currentVersion = 4691883D2E25E381008BD3F7 /* Questlog.xcdatamodel */;
-			path = DBModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		469188612E25EF1D008BD3F7 /* ToDoModel.xcdatamodeld */ = {
+		469188612E25EF1D008BD3F7 /* DBModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				469188632E25EF1D008BD3F7 /* ToDoModel.xcdatamodel */,
 			);
 			currentVersion = 469188632E25EF1D008BD3F7 /* ToDoModel.xcdatamodel */;
-			name = ToDoModel.xcdatamodeld;
-			path = /Users/kat/Projects/Questlog/Questlog/Utility/ToDoModel.xcdatamodeld;
+			path = DBModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -1,28 +1,24 @@
+////
+////  ListFormState.swift
+////  Questlog
+////
+////  Created by Mars on 7/13/25.
+////
 //
-//  ListFormState.swift
-//  Questlog
+//import Foundation
 //
-//  Created by Mars on 7/13/25.
+//class ListFormState: ObservableObject {
+//    @Published var list: ListEntity?
 //
-
-import Foundation
-
-class ListFormState: ObservableObject {
-    @Published var listName: String = ""
-    @Published var listDescription: String = ""
-    @Published var listCreatedAt: String = ""
-    @Published var listDueDate: Date = Date()
-    @Published var listNotes: String = ""
-
-    func resetForm() {
-        listName = ""
-        listDescription = ""
-        listCreatedAt = ""
-        listDueDate = Date()
-        listNotes = ""
-    }
-
-    var isValid: Bool {
-        return !listName.trimmingCharacters(in: .whitespaces).isEmpty
-    }
-}
+//    func resetForm() {
+//        listName = ""
+//        listDescription = ""
+//        listCreatedAt = ""
+//        listDueDate = Date()
+//        listNotes = ""
+//    }
+//
+//    var isValid: Bool {
+//        return !listName.trimmingCharacters(in: .whitespaces).isEmpty
+//    }
+//}
