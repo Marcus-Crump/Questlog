@@ -49,7 +49,7 @@ struct ListsView: View {
                         ForEach(dbManager.getAllLists(), id: \.self) { list in
                             if var n = list.name {
                                 Button(action: {
-                                    list = dbManager.getListByName(n)
+                                    lst = dbManager.getListByName(n)
                                     page = "ListDetail"
                                 }) {
                                     Text(n)
@@ -74,5 +74,15 @@ struct ListsView: View {
 }
 
  #Preview {
-    ListsView(page: .constant("Lists"), dbManager: DBManager())
+     @State var testList: ListEntity? = {
+         let listContext = PersistenceController.preview.container.viewContext
+         
+         let lst = ListEntity(context: listContext)
+         lst.name = "Test List"
+         lst.desc = "Test Description"
+         lst.notes = "Test Notes"
+         return lst
+     }()
+    return ListsView(page: .constant("Lists"),dbManager: DBManager(),
+                     lst: $testList)
  }

@@ -13,9 +13,21 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+        for i in 0..<10 {
+            let newList = ListEntity(context: viewContext)
+            newList.name = "List \(i)"
+            newList.desc = "Description \(i)"
+            newList.notes = "Notes \(i)"
+            newList.priority = Int16(i)
+
+            let newToDoItem = ToDoItemEntity(context: viewContext)
+            newToDoItem.name = "ToDo Item \(i)"
+            newToDoItem.desc = "Description \(i)"
+            newToDoItem.difficulty = Int16(i)
+            newToDoItem.comTime = Int16(i)
+            newToDoItem.notes = "Notes \(i)"
+            newToDoItem.dateDue = Date()
+            newToDoItem.list = newList
         }
         do {
             try viewContext.save()

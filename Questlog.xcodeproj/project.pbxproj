@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		46710EC82E2842560041B627 /* ListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46710EC72E2842560041B627 /* ListDetailView.swift */; };
+		467644C32E296E4C00A95554 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467644C22E296E4C00A95554 /* Persistence.swift */; };
 		469188322E25E37D008BD3F7 /* QuestlogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469188312E25E37D008BD3F7 /* QuestlogApp.swift */; };
 		469188362E25E381008BD3F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469188352E25E381008BD3F7 /* Assets.xcassets */; };
 		469188392E25E381008BD3F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469188382E25E381008BD3F7 /* Preview Assets.xcassets */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		46710EC72E2842560041B627 /* ListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailView.swift; sourceTree = "<group>"; };
+		467644C22E296E4C00A95554 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		4691882E2E25E37D008BD3F7 /* Questlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Questlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		469188312E25E37D008BD3F7 /* QuestlogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestlogApp.swift; sourceTree = "<group>"; };
 		469188352E25E381008BD3F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,6 +68,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		467644C42E29728700A95554 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				469188552E25EF1D008BD3F7 /* ListCreationView.swift */,
+				469188562E25EF1D008BD3F7 /* ListsView.swift */,
+				46710EC72E2842560041B627 /* ListDetailView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		467644C52E2972B300A95554 /* ToDo */ = {
+			isa = PBXGroup;
+			children = (
+				4691885B2E25EF1D008BD3F7 /* ToDoItemCreationView.swift */,
+				4691885C2E25EF1D008BD3F7 /* ToDoView.swift */,
+			);
+			path = ToDo;
+			sourceTree = "<group>";
+		};
 		469188252E25E37D008BD3F7 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +106,7 @@
 		469188302E25E37D008BD3F7 /* Questlog */ = {
 			isa = PBXGroup;
 			children = (
+				467644C22E296E4C00A95554 /* Persistence.swift */,
 				469188702E25F085008BD3F7 /* ContentView.swift */,
 				469188512E25ED53008BD3F7 /* Models */,
 				469188622E25EF1D008BD3F7 /* Utility */,
@@ -133,15 +155,12 @@
 		4691885D2E25EF1D008BD3F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				469188552E25EF1D008BD3F7 /* ListCreationView.swift */,
-				469188562E25EF1D008BD3F7 /* ListsView.swift */,
+				467644C52E2972B300A95554 /* ToDo */,
+				467644C42E29728700A95554 /* List */,
 				469188572E25EF1D008BD3F7 /* LoadingView.swift */,
 				469188582E25EF1D008BD3F7 /* ProjectDetailView.swift */,
 				469188592E25EF1D008BD3F7 /* ProjectsView.swift */,
 				4691885A2E25EF1D008BD3F7 /* TOCView.swift */,
-				4691885B2E25EF1D008BD3F7 /* ToDoItemCreationView.swift */,
-				4691885C2E25EF1D008BD3F7 /* ToDoView.swift */,
-				46710EC72E2842560041B627 /* ListDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -237,6 +256,7 @@
 				469188532E25ED53008BD3F7 /* ToDoFormState.swift in Sources */,
 				469188652E25EF1D008BD3F7 /* ListsView.swift in Sources */,
 				4691886A2E25EF1D008BD3F7 /* ToDoItemCreationView.swift in Sources */,
+				467644C32E296E4C00A95554 /* Persistence.swift in Sources */,
 				469188322E25E37D008BD3F7 /* QuestlogApp.swift in Sources */,
 				4691886E2E25EF1D008BD3F7 /* DBManager.swift in Sources */,
 				469188672E25EF1D008BD3F7 /* ProjectDetailView.swift in Sources */,

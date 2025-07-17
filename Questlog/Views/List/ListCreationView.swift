@@ -25,7 +25,7 @@ struct ListCreationView: View {
     var duplicateListExists: Bool {
         let request = ListEntity.fetchRequest()
         request.predicate = NSPredicate(format: "name == %@", lst?.name ?? "")
-        if let results = try? dbManager.container.viewContext.fetch(request) as? [ListEntity] {
+        if let results = try? dbManager.container.viewContext.fetch(request) as [ListEntity] {
             return results.contains(where: { $0 != lst })
         }
         return false
@@ -139,9 +139,14 @@ struct ListCreationView: View {
 
 
 #Preview {
-    let testList = ListEntity(context: PersistenceController.preview.container.viewContext)
-    testList.name = "Test List"
-    testList.desc = "Test Description"
-    testList.notes = "Test Notes"
-    return ListCreationView(page: .constant("CreateList"), dbManager: DBManager(), lst: testList)
+    @State var testList: ListEntity? = { 
+        let listContext = PersistenceController.preview.container.viewContext
+        let lst = ListEntity(context: listContext)
+        lst.name = "Test List"
+        lst.desc = "Test Description"
+        lst.notes = "Test Notes"
+        return lst
+    }()
+    return ListCreationView(page: .constant("CreateList"), 
+                            dbManager: DBManager(),lst: $testList)
 }

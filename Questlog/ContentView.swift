@@ -12,6 +12,7 @@ struct ContentView: View {
     @StateObject private var dbManager: DBManager = DBManager()
     @State private var listState: ListEntity? = nil
     @State private var todoState: ToDoItemEntity? = nil
+    @State private var creating: Bool = false
     
     var body: some View {
         switch page {

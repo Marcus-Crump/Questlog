@@ -24,7 +24,7 @@ struct ToDoItemCreationView: View {
         "August", "September", "October", "November", "December"]
     @State private var daysInMonth: [Int] = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     
-    var comTime: Int {
+    var timeNMin: Int {
         return (60*estHours)+estMinutes
     }
     
@@ -34,7 +34,8 @@ struct ToDoItemCreationView: View {
     }
 
     var validName: Bool {
-        return !itemName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        guard let name = lst?.name else { return false }
+        return !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
 
     var validTime: Bool {
@@ -82,7 +83,10 @@ struct ToDoItemCreationView: View {
                     // Item Name
                     VStack(alignment: .center, spacing: 2) {
                         
-                        TextField("Item Name...", text: $itemName)
+                        TextField("Item Name...", text: Binding(
+                            get: { todoState?.name ?? "" },
+                            set: { todoState?.name = $0 }
+                        ))
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .frame(width: 350)
                         // Description input using TextEditor
@@ -93,7 +97,10 @@ struct ToDoItemCreationView: View {
                                 // Placeholder text, only visible when itemDescription is empty
                                 
                                 // The actual TextEditor
-                                TextEditor(text: $itemDescription)
+                                TextEditor(text: Binding(
+                                    get: { todoState?.desc ?? "Loading error" },
+                                    set: { todoState?.desc = $0 }
+                                ))
                                     .frame(minHeight: 40, maxHeight: 75)
                                     .padding(4)
                                     .background(Color.white)
@@ -102,7 +109,7 @@ struct ToDoItemCreationView: View {
                                         RoundedRectangle(cornerRadius: 8)
                                             .stroke(Color.gray.opacity(0.5), lineWidth: 1)
                                     )
-                                    if itemDescription.isEmpty {
+                                if todoState?.desc?.isEmpty ?? true {
                                     Text("Description...")
                                         .foregroundColor(.gray.opacity(0.5))
                                         .padding(8) // Match TextEditor's padding
@@ -120,7 +127,10 @@ struct ToDoItemCreationView: View {
                                 // Placeholder text, only visible when itemNotes is empty
                                 
                                 // The actual TextEditor
-                                TextEditor(text: $itemNotes)
+                                TextEditor(text: Binding(
+                                    get: { todoState?.notes ?? "Loading error" },
+                                    set: { todoState?.notes = $0 }
+                                ))
                                     .frame(minHeight: 40, maxHeight: 75)
                                     .padding(4)
                                     .background(Color.white)
@@ -129,7 +139,7 @@ struct ToDoItemCreationView: View {
                                         RoundedRectangle(cornerRadius: 8)
                                             .stroke(Color.gray.opacity(0.5), lineWidth: 1)
                                     )
-                                    if itemNotes.isEmpty {
+                                    if todoState?.notes?.isEmpty ?? true {
                                     Text("Notes...")
                                         .foregroundColor(.gray.opacity(0.5))
                                         .padding(8) // Match TextEditor's padding
@@ -173,7 +183,10 @@ struct ToDoItemCreationView: View {
                     VStack(alignment: .center, spacing: 2) {
                         Text("Difficulty")
                             .font(.headline)
-                        Picker("Difficulty", selection: $itemDifficulty) {
+                        Picker("Difficulty", selection: Binding(
+                            get: { todoState?.difficulty ?? 1 },
+                            set: { todoState?.difficulty = $0 }
+                        )) {
                             ForEach(1..<11) { num in
                                 Text("\(num)").tag(num)
                             }
@@ -224,9 +237,7 @@ struct ToDoItemCreationView: View {
                 .padding(.top, 20)
                 .frame(maxWidth: .infinity, alignment: .center)
                 Button(action: {
-                    dbManager.createToDoItem(title: itemName, 
-                    description: itemDescription, difficulty: itemDifficulty,
-                    comTime: comTime, notes: itemNotes, dueDate: itemDueDate)
+                    page = "CreateList"
                 }) {
                     Text("Create ToDo")
                         .font(.headline)
@@ -244,10 +255,27 @@ struct ToDoItemCreationView: View {
 
 
 #Preview {
-    let testList = ListEntity(context: PersistenceController.preview.container.viewContext)
-    testList.name = "Test List"
-    testList.priority = 1
-    testList.description = "Test Description"
-    testList.notes = "Test Notes"
-    return ToDoItemCreationView(list: testList, page: .constant("ToDoItemCreation"), dbManager: DBManager())
+    @State var testList: ListEntity? = {
+        let listContext = PersistenceController.preview.container.viewContext
+        let lst = ListEntity(context: listContext)
+        lst.name = "Test List"
+        lst.priority = 1
+        lst.desc = "Test Description"
+        lst.notes = "Test Notes"
+        return lst
+    }()
+    @State var testTodo: ToDoItemEntity? = {
+        let todoContext = PersistenceController.preview.container.viewContext
+        let todo = ToDoItemEntity(context: todoContext)
+        todo.name = "Test ToDo"
+        todo.difficulty = 1
+        todo.comTime = 1
+        todo.desc = "Test Description"
+        todo.notes = "Test Notes"
+        todo.dateDue = Date()
+        todo.list = testList
+        return todo
+    }()
+    
+    return ToDoItemCreationView(page: .constant("ToDoItemCreation"), dbManager: DBManager(), lst: $testList, todoState: $testTodo)
 }

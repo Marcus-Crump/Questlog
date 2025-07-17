@@ -38,7 +38,7 @@ struct ListDetailView: View {
                             .foregroundStyle(Color.black)
                             .padding(.top, 50)
                     }
-                    Text(list? "\(list.name)" : "Error")
+                    Text(lst?.name ?? "Error")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.black)
@@ -64,12 +64,12 @@ struct ListDetailView: View {
                 Spacer()
                 }
 
-                ForEach(list?.items ?? [], id: \.self) { item in
+                ForEach(Array(lst?.items as? Set<ToDoItemEntity> ?? []), id: \.self) { item in
                     Button(action: {
                         
                         page = "ToDo"
                     }) {
-                        Text(item.name)
+                        Text(item.name ?? "")
                     }
                 }
 
@@ -79,5 +79,13 @@ struct ListDetailView: View {
 }
 
 #Preview {
-    ListDetailView(page: .constant("ListDetail"))
+    @State var testList: ListEntity? = {
+        let listContext = PersistenceController.preview.container.viewContext
+        let lst = ListEntity(context: listContext)
+        lst.name = "Test List"
+        lst.desc = "Test Description"
+        lst.notes = "Test Notes"
+        return lst
+    }()
+    return ListDetailView(page: .constant("ListDetail"), dbManager: DBManager(), lst: $testList)
 }

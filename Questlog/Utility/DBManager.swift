@@ -66,6 +66,9 @@ extension DBManager {
         request.predicate = NSPredicate(format: "name == %@", name)
         do {
             return try container.viewContext.fetch(request).first
+        } catch {
+            print("Failed to fetch list by name '\(name)': \(error)")
+            return nil
         }
     }
 
@@ -74,6 +77,9 @@ extension DBManager {
         request.predicate = NSPredicate(format: "priority == %d", priority)
         do {
             return try container.viewContext.fetch(request).first
+        } catch {
+            print("Failed to fetch list by priority \(priority): \(error)")
+            return nil
         }
     }
 
