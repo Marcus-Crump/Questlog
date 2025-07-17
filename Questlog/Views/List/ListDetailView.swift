@@ -10,7 +10,8 @@ import SwiftUI
 
 struct ListDetailView: View {
     @Binding var page: String
-    private var list: ListEntity?
+    @ObservedObject var dbManager: DBManager
+    @Binding var lst: ListEntity?
     
     var body: some View{
         ZStack{

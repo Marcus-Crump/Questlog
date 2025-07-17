@@ -4,16 +4,14 @@
 //
 //  Created by Mars on 7/13/25.
 //
-
+import Foundation
 import SwiftUI
 
 struct ToDoItemCreationView: View {
-    var list: ListEntity
     @Binding var page: String
     @ObservedObject var dbManager: DBManager
-    @State private var itemName = ""
-    @State private var itemDescription = ""
-    @State private var itemNotes = ""
+    @Binding var lst: ListEntity?
+    @Binding var todoState: ToDoItemEntity?
     @State private var itemDifficulty = 1
     @State private var estHours = 0
     @State private var estMinutes = 0

@@ -9,12 +9,10 @@ import SwiftUI
 
 struct ToDoView: View {
     @Binding var page: String
+//    @ObservedObject var dbManager: DBManager
+//    var todoState: ToDoItemEntity?
+//    var lstState: ListEntity?
     var name: String
-    // private var description: String
-    // private var dueDate: Date
-    // private var priority: String
-    // private var status: String
-    // private var notes: String
     
     var body: some View {
         ZStack {

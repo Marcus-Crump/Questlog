@@ -6,15 +6,29 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct ListCreationView: View {
     @Binding var page: String
     @ObservedObject var dbManager: DBManager
-    private var list: ListEntity?
+    @Binding var lst: ListEntity?
 
     private var validName: Bool {
-        return !listName.trimmingCharacters(in: .whitespaces).isEmpty
-            && dbManager.getListByName(listName) == nil
+        
+        if let l = lst {
+            let strip: String = l.name?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            return strip.count > 0 && dbManager.getListByName(strip) == nil
+        }
+        return false
+    }
+
+    var duplicateListExists: Bool {
+        let request = ListEntity.fetchRequest()
+        request.predicate = NSPredicate(format: "name == %@", lst?.name ?? "")
+        if let results = try? dbManager.container.viewContext.fetch(request) as? [ListEntity] {
+            return results.contains(where: { $0 != lst })
+        }
+        return false
     }
 
     var body: some View {
@@ -30,9 +44,9 @@ struct ListCreationView: View {
             HStack{
                 Spacer()
                 Button(action: {
-                    if let l = list {
+                    if let l = lst {
                         dbManager.deleteList(l)
-                        list = nil
+                        lst = nil
                     }
                     page = "Lists"
                 }) {
@@ -51,35 +65,31 @@ struct ListCreationView: View {
             Spacer()
             }
             VStack() {
-            // Text field for list name with placeholder
-            let request = ListEntity.fetchRequest()
-            request.predicate = NSPredicate(format: "name == %@", list?.name ?? "")
-            if let results = try? dbManager.container.viewContext.fetch(request) as? [ListEntity],
-               results.contains(where: { $0 != list }) {
-                Text("List name already exists")
-                    .font(.headline)
-                    .foregroundColor(.red)
-            }
-            TextField("Enter list name...", text: Binding (
-                get: { list?.name ?? "" },
-                set: { list?.name = $0 }
-            )) // Placeholder text disappears when typing
-                .textFieldStyle(RoundedBorderTextFieldStyle()) // Gives it a nice border
-                .frame(width: 300)
-                .padding(.horizontal, 40)
+                if duplicateListExists {
+                    Text("List name already exists")
+                        .font(.headline)
+                        .foregroundColor(.red)
+                }
+                TextField("Enter list name...", text: Binding (
+                    get: { lst?.name ?? "" },
+                    set: { lst?.name = $0 }
+                )) // Placeholder text disappears when typing
+                    .textFieldStyle(RoundedBorderTextFieldStyle()) // Gives it a nice border
+                    .frame(width: 300)
+                    .padding(.horizontal, 40)
             }
             
             // Text field for list description with placeholder
             TextField("Enter list description...", text: Binding (
-                get: { list?.desc ?? "" },
-                set: { list?.desc = $0 }
+                get: { lst?.desc ?? "" },
+                set: { lst?.desc = $0 }
             )) // Placeholder text disappears when typing
                 .textFieldStyle(RoundedBorderTextFieldStyle()) // Gives it a nice border
                 .frame(width: 300)
                 .padding(.horizontal, 40)
             TextField("Enter list notes...", text: Binding (
-                get: { list?.notes ?? "" },
-                set: { list?.notes = $0 }
+                get: { lst?.notes ?? "" },
+                set: { lst?.notes = $0 }
             )) // Placeholder text disappears when typing
                 .textFieldStyle(RoundedBorderTextFieldStyle()) // Gives it a nice border
                 .frame(width: 300)
@@ -87,11 +97,11 @@ struct ListCreationView: View {
             
             VStack(spacing: 10) {
                 //for loop to print out the list of items as buttons with the name of the item as the text
-                ForEach(list?.items ?? [], id: \.self) { item in
+                ForEach(Array(lst?.items as? Set<ToDoItemEntity> ?? []), id: \.self) { item in
                     Button(action: {
                         page = "ToDo"
                     }) {
-                        Text(item.name)
+                        Text(item.name ?? "")
                     }
                 }
             
@@ -116,12 +126,12 @@ struct ListCreationView: View {
         }
         }
         .onAppear {
-            if list == nil {
+            if lst == nil {
             let priority = Int16(dbManager.getNumberOfLists() + 1)
 
             dbManager.createList(name: "", description: "New Description", notes: "New Notes", priority: priority)
 
-                list = dbManager.getListByName("")
+                lst = dbManager.getListByName("")
             }
         }
     }
@@ -133,5 +143,5 @@ struct ListCreationView: View {
     testList.name = "Test List"
     testList.desc = "Test Description"
     testList.notes = "Test Notes"
-    return ListCreationView(page: .constant("CreateList"), dbManager: DBManager(), list: testList)
+    return ListCreationView(page: .constant("CreateList"), dbManager: DBManager(), lst: testList)
 }

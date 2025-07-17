@@ -12,7 +12,7 @@ struct ListsView: View {
     @Binding var page: String
     @State var newList: Bool = false
     @ObservedObject var dbManager: DBManager
-    private var list: ListEntity?
+    @Binding var lst: ListEntity?
     
     var body: some View {
             ZStack {
@@ -47,7 +47,7 @@ struct ListsView: View {
                     // Navigation links for your lists from Core Data
                     VStack(spacing: 10) {
                         ForEach(dbManager.getAllLists(), id: \.self) { list in
-                            if let n = list.name {
+                            if var n = list.name {
                                 Button(action: {
                                     list = dbManager.getListByName(n)
                                     page = "ListDetail"
