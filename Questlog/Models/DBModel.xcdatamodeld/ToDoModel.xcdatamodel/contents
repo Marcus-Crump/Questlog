@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23H626" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
-    <entity name="ListEntity" representedClassName="ListEntity" syncable="YES" codeGenerationType="class">
+    <entity name="ListEntity" representedClassName=".ListEntity" syncable="YES" codeGenerationType="class">
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="notes" optional="YES" attributeType="String"/>
         <attribute name="priority" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="items" toMany="YES" deletionRule="Cascade" destinationEntity="ToDoItemEntity" inverseName="list" inverseEntity="ToDoItemEntity"/>
     </entity>
-    <entity name="ToDoItemEntity" representedClassName="ToDoItemEntity" syncable="YES" codeGenerationType="class">
+    <entity name="ToDoItemEntity" representedClassName=".ToDoItemEntity" syncable="YES" codeGenerationType="class">
         <attribute name="comTime" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="dateAdded" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateDue" optional="YES" attributeType="Date" usesScalarValueType="NO"/>

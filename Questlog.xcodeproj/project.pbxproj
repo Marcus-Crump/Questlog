@@ -146,6 +146,7 @@
 		469188512E25ED53008BD3F7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				469188612E25EF1D008BD3F7 /* DBModel.xcdatamodeld */,
 				4691884E2E25ED53008BD3F7 /* States */,
 				469188502E25ED53008BD3F7 /* ToDoLists */,
 			);
@@ -171,7 +172,6 @@
 				4691885E2E25EF1D008BD3F7 /* BackButton.swift */,
 				4691885F2E25EF1D008BD3F7 /* BookmarksView.swift */,
 				469188602E25EF1D008BD3F7 /* DBManager.swift */,
-				469188612E25EF1D008BD3F7 /* DBModel.xcdatamodeld */,
 				46E4D2C02E2711090030F164 /* DateEqualities.swift */,
 			);
 			path = Utility;
