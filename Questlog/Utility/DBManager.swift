@@ -11,7 +11,7 @@ import CoreData
 // ObservableObject allows SwiftUI to watch this class for changes
 class DBManager: ObservableObject {
     // NSPersistentContainer manages the Core Data stack and database connection
-    let container = NSPersistentContainer(name: "ToDoModel")
+    let container = NSPersistentContainer(name: "DBModel")
     // Contains these Core Data pieces:
     // - Managed Object Model (data schema)
     // - Persistent Store Coordinator (database connection manager) 
@@ -25,6 +25,7 @@ class DBManager: ObservableObject {
             if let error = error {
                 // If loading fails, print the error
                 print("Core Data failed to load: \(error)")
+                fatalError("Core Data failed to load: \(error)")
             }
         }
     }
@@ -123,11 +124,10 @@ extension DBManager {
         saveContext()
     }
     func updateItem(_ item: ToDoItemEntity, title: String, description: String, 
-    difficulty: Int, etc: String, notes: String, dueDate: Date) {
+    difficulty: Int, notes: String, dueDate: Date) {
         item.name = title
         item.desc = description
         item.difficulty = Int16(difficulty)
-        item.notes = etc
         item.notes = notes
         item.dateDue = dueDate
         saveContext()

@@ -8,8 +8,9 @@ import Foundation
 import SwiftUI
 
 struct ToDoItemCreationView: View {
-    @Binding var page: String
-    @ObservedObject var dbManager: DBManager
+    @Binding var page: Page
+    @EnvironmentObject var dbManager: DBManager
+    @EnvironmentObject var history: HistoryStack
     @Binding var lst: ListEntity?
     @Binding var todoState: ToDoItemEntity?
     @State private var itemDifficulty = 1
@@ -53,19 +54,18 @@ struct ToDoItemCreationView: View {
     
     var body: some View {
         ZStack {
-            Image("Stars")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .ignoresSafeArea()
-            Image("Background")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+            Background()
             
             ScrollView {
                 VStack(spacing: 32) { // More space between sections
                     // Header
                     HStack {
-                        Button(action: { page = "CreateList" }) {
+                        Button(action: {
+                            if let item = todoState {
+                                dbManager.deleteItem(item)
+                            }
+                            page = history.pop() ?? .createList
+                        }) {
                             Image(systemName: "chevron.left")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
@@ -98,7 +98,7 @@ struct ToDoItemCreationView: View {
                                 
                                 // The actual TextEditor
                                 TextEditor(text: Binding(
-                                    get: { todoState?.desc ?? "Loading error" },
+                                    get: { todoState?.desc ?? "" },
                                     set: { todoState?.desc = $0 }
                                 ))
                                     .frame(minHeight: 40, maxHeight: 75)
@@ -128,7 +128,7 @@ struct ToDoItemCreationView: View {
                                 
                                 // The actual TextEditor
                                 TextEditor(text: Binding(
-                                    get: { todoState?.notes ?? "Loading error" },
+                                    get: { todoState?.notes ?? "" },
                                     set: { todoState?.notes = $0 }
                                 ))
                                     .frame(minHeight: 40, maxHeight: 75)
@@ -237,7 +237,16 @@ struct ToDoItemCreationView: View {
                 .padding(.top, 20)
                 .frame(maxWidth: .infinity, alignment: .center)
                 Button(action: {
-                    page = "CreateList"
+                    if let item = todoState {
+                        dbManager.updateItem(item,
+                            title: item.name ?? "",
+                            description: item.desc ?? "",
+                            difficulty: itemDifficulty,
+                            notes: item.notes ?? "",
+                            dueDate: itemDueDate
+                        )
+                    }
+                    page = history.pop() ?? .createList
                 }) {
                     Text("Create ToDo")
                         .font(.headline)
@@ -250,8 +259,21 @@ struct ToDoItemCreationView: View {
                 
             }
         }
+        .onAppear {
+            print(history.history)
+            if todoState == nil {
+                // Create a new ToDoItemEntity in the context
+                if let list = lst {
+                    dbManager.createToDoItem(title: "New ToDo", 
+                    description: "New Description", difficulty: 1, comTime: 0,
+                    notes: "New Notes", dueDate: Date(), in: list) 
+                    todoState = dbManager.getItemsForList(list).last
+                }
+            }
+            // else: todoState is already set, so just use it
         }
     }
+}
 
 
 #Preview {
@@ -277,5 +299,7 @@ struct ToDoItemCreationView: View {
         return todo
     }()
     
-    return ToDoItemCreationView(page: .constant("ToDoItemCreation"), dbManager: DBManager(), lst: $testList, todoState: $testTodo)
+    return ToDoItemCreationView(page: .constant(.toDo), lst: $testList, todoState: $testTodo)
+        .environmentObject(DBManager())
+        .environmentObject(HistoryStack())
 }

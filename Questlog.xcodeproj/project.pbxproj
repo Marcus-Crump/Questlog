@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		463258012E2C117500EFA1E2 /* DBModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 463257FF2E2C117500EFA1E2 /* DBModel.xcdatamodeld */; };
+		463258032E2C855B00EFA1E2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463258022E2C855B00EFA1E2 /* SettingsView.swift */; };
+		463258052E2ECF4100EFA1E2 /* HistoryStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463258042E2ECF4100EFA1E2 /* HistoryStack.swift */; };
+		463258072E2ED56500EFA1E2 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463258062E2ED56500EFA1E2 /* Background.swift */; };
 		46710EC82E2842560041B627 /* ListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46710EC72E2842560041B627 /* ListDetailView.swift */; };
 		467644C32E296E4C00A95554 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467644C22E296E4C00A95554 /* Persistence.swift */; };
 		469188322E25E37D008BD3F7 /* QuestlogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469188312E25E37D008BD3F7 /* QuestlogApp.swift */; };
@@ -26,12 +30,15 @@
 		4691886C2E25EF1D008BD3F7 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691885E2E25EF1D008BD3F7 /* BackButton.swift */; };
 		4691886D2E25EF1D008BD3F7 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4691885F2E25EF1D008BD3F7 /* BookmarksView.swift */; };
 		4691886E2E25EF1D008BD3F7 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469188602E25EF1D008BD3F7 /* DBManager.swift */; };
-		4691886F2E25EF1D008BD3F7 /* DBModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 469188612E25EF1D008BD3F7 /* DBModel.xcdatamodeld */; };
 		469188712E25F085008BD3F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469188702E25F085008BD3F7 /* ContentView.swift */; };
 		46E4D2C12E2711090030F164 /* DateEqualities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4D2C02E2711090030F164 /* DateEqualities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		463258002E2C117500EFA1E2 /* Questlog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Questlog.xcdatamodel; sourceTree = "<group>"; };
+		463258022E2C855B00EFA1E2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		463258042E2ECF4100EFA1E2 /* HistoryStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStack.swift; sourceTree = "<group>"; };
+		463258062E2ED56500EFA1E2 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		46710EC72E2842560041B627 /* ListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailView.swift; sourceTree = "<group>"; };
 		467644C22E296E4C00A95554 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		4691882E2E25E37D008BD3F7 /* Questlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Questlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,8 +59,7 @@
 		4691885E2E25EF1D008BD3F7 /* BackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		4691885F2E25EF1D008BD3F7 /* BookmarksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		469188602E25EF1D008BD3F7 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
-		469188632E25EF1D008BD3F7 /* ToDoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoModel.xcdatamodel; sourceTree = "<group>"; };
-		469188702E25F085008BD3F7 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Questlog/ContentView.swift; sourceTree = SOURCE_ROOT; };
+		469188702E25F085008BD3F7 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Questlog/Main/ContentView.swift; sourceTree = SOURCE_ROOT; };
 		46E4D2C02E2711090030F164 /* DateEqualities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateEqualities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +74,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		463258082E2EED8E00EFA1E2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				463257FF2E2C117500EFA1E2 /* DBModel.xcdatamodeld */,
+				467644C22E296E4C00A95554 /* Persistence.swift */,
+				469188702E25F085008BD3F7 /* ContentView.swift */,
+				469188312E25E37D008BD3F7 /* QuestlogApp.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		463258092E2EEDD600EFA1E2 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				469188582E25EF1D008BD3F7 /* ProjectDetailView.swift */,
+				469188592E25EF1D008BD3F7 /* ProjectsView.swift */,
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
+		4632580A2E2EEDEE00EFA1E2 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				469188572E25EF1D008BD3F7 /* LoadingView.swift */,
+				4691885A2E25EF1D008BD3F7 /* TOCView.swift */,
+				463258022E2C855B00EFA1E2 /* SettingsView.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
 		467644C42E29728700A95554 /* List */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,12 +142,10 @@
 		469188302E25E37D008BD3F7 /* Questlog */ = {
 			isa = PBXGroup;
 			children = (
-				467644C22E296E4C00A95554 /* Persistence.swift */,
-				469188702E25F085008BD3F7 /* ContentView.swift */,
+				463258082E2EED8E00EFA1E2 /* Main */,
 				469188512E25ED53008BD3F7 /* Models */,
 				469188622E25EF1D008BD3F7 /* Utility */,
 				4691885D2E25EF1D008BD3F7 /* Views */,
-				469188312E25E37D008BD3F7 /* QuestlogApp.swift */,
 				469188352E25E381008BD3F7 /* Assets.xcassets */,
 				469188372E25E381008BD3F7 /* Preview Content */,
 			);
@@ -146,7 +180,6 @@
 		469188512E25ED53008BD3F7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				469188612E25EF1D008BD3F7 /* DBModel.xcdatamodeld */,
 				4691884E2E25ED53008BD3F7 /* States */,
 				469188502E25ED53008BD3F7 /* ToDoLists */,
 			);
@@ -156,12 +189,10 @@
 		4691885D2E25EF1D008BD3F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4632580A2E2EEDEE00EFA1E2 /* Misc */,
+				463258092E2EEDD600EFA1E2 /* Projects */,
 				467644C52E2972B300A95554 /* ToDo */,
 				467644C42E29728700A95554 /* List */,
-				469188572E25EF1D008BD3F7 /* LoadingView.swift */,
-				469188582E25EF1D008BD3F7 /* ProjectDetailView.swift */,
-				469188592E25EF1D008BD3F7 /* ProjectsView.swift */,
-				4691885A2E25EF1D008BD3F7 /* TOCView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,9 +201,11 @@
 			isa = PBXGroup;
 			children = (
 				4691885E2E25EF1D008BD3F7 /* BackButton.swift */,
+				463258062E2ED56500EFA1E2 /* Background.swift */,
 				4691885F2E25EF1D008BD3F7 /* BookmarksView.swift */,
 				469188602E25EF1D008BD3F7 /* DBManager.swift */,
 				46E4D2C02E2711090030F164 /* DateEqualities.swift */,
+				463258042E2ECF4100EFA1E2 /* HistoryStack.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -247,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				463258032E2C855B00EFA1E2 /* SettingsView.swift in Sources */,
 				469188692E25EF1D008BD3F7 /* TOCView.swift in Sources */,
 				4691886D2E25EF1D008BD3F7 /* BookmarksView.swift in Sources */,
 				469188542E25ED53008BD3F7 /* ToDoList.swift in Sources */,
@@ -260,13 +294,15 @@
 				469188322E25E37D008BD3F7 /* QuestlogApp.swift in Sources */,
 				4691886E2E25EF1D008BD3F7 /* DBManager.swift in Sources */,
 				469188672E25EF1D008BD3F7 /* ProjectDetailView.swift in Sources */,
+				463258072E2ED56500EFA1E2 /* Background.swift in Sources */,
 				469188522E25ED53008BD3F7 /* ListFormState.swift in Sources */,
 				469188682E25EF1D008BD3F7 /* ProjectsView.swift in Sources */,
 				469188712E25F085008BD3F7 /* ContentView.swift in Sources */,
+				463258052E2ECF4100EFA1E2 /* HistoryStack.swift in Sources */,
 				469188662E25EF1D008BD3F7 /* LoadingView.swift in Sources */,
 				46E4D2C12E2711090030F164 /* DateEqualities.swift in Sources */,
+				463258012E2C117500EFA1E2 /* DBModel.xcdatamodeld in Sources */,
 				4691886C2E25EF1D008BD3F7 /* BackButton.swift in Sources */,
-				4691886F2E25EF1D008BD3F7 /* DBModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,12 +508,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		469188612E25EF1D008BD3F7 /* DBModel.xcdatamodeld */ = {
+		463257FF2E2C117500EFA1E2 /* DBModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				469188632E25EF1D008BD3F7 /* ToDoModel.xcdatamodel */,
+				463258002E2C117500EFA1E2 /* Questlog.xcdatamodel */,
 			);
-			currentVersion = 469188632E25EF1D008BD3F7 /* ToDoModel.xcdatamodel */;
+			currentVersion = 463258002E2C117500EFA1E2 /* Questlog.xcdatamodel */;
 			path = DBModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

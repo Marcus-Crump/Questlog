@@ -9,27 +9,23 @@ import Foundation
 import SwiftUI
 
 struct ListDetailView: View {
-    @Binding var page: String
-    @ObservedObject var dbManager: DBManager
+    @Binding var page: Page
+    @EnvironmentObject var dbManager: DBManager
+    @EnvironmentObject var historyStack: HistoryStack
     @Binding var lst: ListEntity?
-    
+    @Binding var todoState: ToDoItemEntity?
+    @State var editMode: Bool = false
+
     var body: some View{
-        ZStack{
-            
-            Image("Stars")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .ignoresSafeArea()
-            Image("Background")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-            
+        ZStack {
+            Background()
             VStack(spacing: 10){
                 
                 HStack{
                     Spacer()
                     Button(action: {
-                        page = "Lists"
+                        lst = nil
+                        page = historyStack.pop() ?? .lists
                     }) {
                         Image(systemName: "chevron.left")
                             .resizable()
@@ -38,42 +34,84 @@ struct ListDetailView: View {
                             .foregroundStyle(Color.black)
                             .padding(.top, 50)
                     }
-                    Text(lst?.name ?? "Error")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.black)
-                    .padding(.top, 50)
-                    
-                    Button(action: {
-                        page = "CreateList"
-                    }) {
+
+                    if editMode {
+                        TextField("List Name", text: Binding(
+                            get: { lst?.name ?? "" },
+                            set: { lst?.name = $0 }
+                        ))
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                            .padding(.top, 50)
+                            .frame(width: 165)
+                    } else {
+                        Text(lst?.name ?? "Error")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                            .padding(.top, 50)
+                    }
+
+                        Button(action: {
+                            if editMode {
+                                if let list = lst {
+                                    dbManager.updateList(list, name: list.name ?? "",
+                                    description: list.desc ?? "", 
+                                    notes: list.notes ?? "", 
+                                    priority: list.priority)
+                                }
+                            }
+                            editMode.toggle()
+                        }) {
                         Image("WriteNewThing")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
+                            .frame(width: 50, height: 50)
+                            .padding(.top, 50)
                     }
 
                     Button(action: {
-                        page = "ToDo"
+                        historyStack.push(.listDetail)
+                        page = .toDo
                     }) {
                         Image(systemName: "plus")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
+                            .frame(width: 25, height: 25)
+                            .padding(.top, 25)
                     }
+                    .disabled(editMode)
                 Spacer()
                 }
+                Spacer()
 
                 ForEach(Array(lst?.items as? Set<ToDoItemEntity> ?? []), id: \.self) { item in
+                HStack {
+                    if editMode {
                     Button(action: {
-                        
-                        page = "ToDo"
+                        dbManager.deleteItem(item)
+                    }) {
+                        Image(systemName: "trash.circle.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 25, height: 25)
+                    }
+                    }
+                    Button(action: {
+                        todoState = item
+                        historyStack.push(.listDetail)
+                        page = .toDo
                     }) {
                         Text(item.name ?? "")
                     }
                 }
+                }
 
             }
+        }
+        .onAppear {
+            print(historyStack.history)
         }
     }
 }
@@ -87,5 +125,19 @@ struct ListDetailView: View {
         lst.notes = "Test Notes"
         return lst
     }()
-    return ListDetailView(page: .constant("ListDetail"), dbManager: DBManager(), lst: $testList)
+    @State var testTodo: ToDoItemEntity? = {
+        let todoContext = PersistenceController.preview.container.viewContext
+        let todo = ToDoItemEntity(context: todoContext)
+        todo.name = "Test ToDo"
+        todo.difficulty = 1
+        todo.comTime = 1
+        todo.desc = "Test Description"
+        todo.notes = "Test Notes"
+        todo.dateDue = Date()
+        todo.list = testList
+        return todo
+    }()
+    return ListDetailView(page: .constant(.listDetail), lst: $testList, todoState: $testTodo)
+        .environmentObject(DBManager())
+        .environmentObject(HistoryStack())
 }
