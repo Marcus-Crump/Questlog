@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ProjectsView: View {
-    @Binding var page: String
+    @Binding var page: Page
+    @EnvironmentObject var history: HistoryStack
     var body: some View {
         ZStack {
             Color.green
@@ -16,9 +17,13 @@ struct ProjectsView: View {
             BookmarksView(page:$page)
         }
         .toolbar(.hidden, for: .navigationBar)
+        .onAppear {
+            print(history.history)
+        }
     }
 }
 
 #Preview {
-    return ProjectsView(page: .constant("Projects"))
+    return ProjectsView(page: .constant(.projects))
+        .environmentObject(HistoryStack())
 }

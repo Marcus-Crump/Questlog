@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct QuestlogApp: App {
+    @StateObject private var dbManager = DBManager()  // Initialize Core Data stack
+    @StateObject private var historyStack = HistoryStack()  // Initialize history stack
     @State private var isLoading = true  // Track loading state
     
     var body: some Scene {
@@ -19,6 +21,8 @@ struct QuestlogApp: App {
                         .transition(.opacity)  // Fade transition
                 } else {
                     ContentView()  // Show main content
+                        .environmentObject(dbManager)  // Pass Core Data manager to views
+                        .environmentObject(historyStack)  // Pass history stack to views
                         .transition(.opacity)  // Fade transition
                 }
             }

@@ -8,18 +8,11 @@
 import SwiftUI
 
 struct TOCView: View {
-    @Binding var page: String
-
+    @Binding var page: Page
+    @EnvironmentObject var history: HistoryStack
     var body: some View {
         ZStack {
-            Image("Stars")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .ignoresSafeArea()
-            Image("Background")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            Background()
             
             VStack {
                 Text("Table of Contents")
@@ -33,7 +26,7 @@ struct TOCView: View {
                 
                 VStack(spacing: 15) {
                     Button(action: {
-                        page = "Lists"
+                        page = .lists
                     }) {
                         Text("Lists")
                             .font(.title)
@@ -42,7 +35,7 @@ struct TOCView: View {
 
                     }
                     Button(action: {
-                        page = "Projects"
+                        page = .projects
                     }) {
                         Text("Projects")
                             .font(.title)
@@ -50,7 +43,7 @@ struct TOCView: View {
                             .foregroundColor(.black)
                     }
                     Button(action: {
-                        page = ""
+                        page = .daily
                     }) {
                         Text("Daily Tasks")
                             .font(.title)
@@ -58,7 +51,7 @@ struct TOCView: View {
                             .foregroundColor(.black)
                     }
                     Button(action: {
-                        page = ""
+                        page = .calendar
                     }) {
                         Text("Calendar")
                             .font(.title)
@@ -66,7 +59,7 @@ struct TOCView: View {
                             .foregroundColor(.black)
                     }
                     Button(action: {
-                        page = ""
+                        page = .settings
                     }) {
                         Text("Settings")
                             .font(.title)
@@ -79,9 +72,14 @@ struct TOCView: View {
                 Spacer()
             }
         }
+        .onAppear {
+            print(history.history)
+        }
+        
     }
 }
 
 #Preview {
-    return TOCView(page: .constant("TOC"))
+    return TOCView(page: .constant(.toc))
+        .environmentObject(HistoryStack())
 }
